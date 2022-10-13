@@ -1,0 +1,59 @@
+
+<!-- Include Header -->
+<%- include('includes/_header') %>
+<!-- Include Header -->
+<!-- Main Content -->
+
+<main id="site-main" class="py-5">
+    <h1 class="text-center py-5">User Management System</h1>
+    <h3 class="text-center">Update User</h3>
+    <div class="container">
+
+      
+<form class="row g-3" method="post" id="update-user">
+    <div class="col-md-6">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" name="name" value="<%= user.name %>" id="name">
+        <input type="hidden"  name="id" value="<%= user._id %>" id="ids">
+    </div>
+    <div class="col-md-6">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" value="<%= user.email %>" name="email" id="email">
+    </div>
+    <div class="col-6">
+        <label for="gender" class="form-label">Gender</label>
+        <div class="form-control">
+            <input class="form-check-input" type="radio" value="Male"name="gender" <%= user.gender == 'Male' ? 'checked' : '' %>>
+            <label class="form-check-label" >
+               Male
+            </label>
+            <input class="form-check-input" type="radio" value="Female"  name="gender" <%= user.gender == 'Female' ? 'checked' : '' %>>
+            <label class="form-check-label" >
+               Female
+            </label>
+        </div>
+    </div>
+    <div class="col-6">
+        <label for="status" class="form-label">Status</label>
+        <select name="status" class="form-control" id="status">
+            <option value="Active" <%= user.status == 'Active' ? 'selected' : '' %>>Active</option>
+            <option value="Inactive" <%= user.status == 'Inactive' ? 'selected' : '' %>>Inactive</option>
+        </select>
+        
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary btn-lg">Save</button>
+    </div>
+</form>
+       
+    </div>
+
+
+    <!-- Modal -->
+
+</main>
+
+<!-- Main Content -->
+<!-- Include Footer-->
+<%- include('includes/_footer') %>
+<!-- Include Footer-->
